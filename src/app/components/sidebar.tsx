@@ -97,14 +97,14 @@ const Sidebar = ({ data }: LayoutPropsInterface) => {
                         </Box>
                     </Section>
                     <Section pt={"1"} pb={"1"} pl={"5"} position={"absolute"} bottom="5" left="0" width={"100%"}>
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', marginBottom:'8px' }}>
                             <Switch onCheckedChange={() => {changeTheme(theme, systemTheme, setTheme); setThemeState((themeState)?false:true)}} color={"indigo"} />
                             <label className="Label" htmlFor="airplane-mode" style={{ paddingLeft: 15 }}>
                                 Dark mode
                             </label>
                         </div>
                         <div>
-                            <LinkWithoutBox passHref={false} legacyBehaviorProps={false} href={"#"} customClass="testing">Terms of use</LinkWithoutBox>
+                            <LinkWithoutBox passHref={false} legacyBehaviorProps={false} href={"#"} customClass="testing">Terms of Use</LinkWithoutBox>
                             <Link style={{ display: 'block' }} href={"#"} passHref legacyBehavior>
                                 <a className={style.Custom_Link} style={{ display: 'block' }} href={"#"}>Privacy Policy</a>
                             </Link>

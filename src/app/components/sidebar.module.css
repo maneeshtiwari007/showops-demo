@@ -5,10 +5,16 @@
 .Link_With_Box{
     max-width: 202px;
     width: 100%;
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 0.5rem 1.5rem;
     border-radius: 6px;
 }
+
+.Link_With_Box svg{
+margin-right: .5rem;
+}
+
 .Custom_Link{
     color: var(--success-color-link);
     display: block;
