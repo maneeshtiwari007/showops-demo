@@ -1,0 +1,63 @@
+.FormField[data-invalid="true"] input {
+    border: 1px solid red;
+    outline:none
+}
+
+.section-head {
+    margin-bottom: 4rem;
+}
+
+.FormField {
+    margin-bottom: 4rem;
+}
+
+.FormLabel {
+    font-size: var(--font-size-custom);
+    font-weight: 500;
+}
+
+.labelContainer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between; 
+    margin-bottom:8px;
+}
+.FormField input,.FormField textarea{
+    height: 2.5rem;
+    padding: 8px;
+    background-color: rgba(0, 32, 0, 0.06);
+    color: rgba(5, 15, 0, 0.47);
+    font-size: var(--font-size-custom);
+    width: 100%;
+    border: 1px solid var(--custom-radius-3);
+    border-radius: var(--custom-radius-3);
+    background-color: rgba(0, 32, 0, 0.06);
+}
+.FormField textarea{
+    min-height: 5rem;
+    padding: 0.75rem;
+}
+.FormControlWrapper{
+    position: relative;
+}
+.FormControlWrapper input{
+    padding-left: 2rem;
+}
+.FormControlWrapper svg{
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.form-grid-container{
+    margin-bottom: 3rem;
+}
+.form-grid-container .FormField{
+    margin-bottom: 0.5rem;
+}
+.trigger-select{
+    width: 100%;
+    border: none;
+    background-color: rgba(0, 32, 0, 0.06);
+    box-shadow:unset
+}
