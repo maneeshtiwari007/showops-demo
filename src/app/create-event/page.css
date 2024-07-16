@@ -52,6 +52,14 @@
     position: relative;
 }
 
+.FormControlWrapper.searchForm input{
+    height: 38px;
+    font-size: var(--font-size-custom);
+    border: 1px solid rgba(0, 32, 0, 0.2);
+    border-radius: var(--custom-radius-3);    
+    color: var(--light-placeholder-color);   
+}
+
 .FormControlWrapper input{
     padding-left: 2rem;
 }
