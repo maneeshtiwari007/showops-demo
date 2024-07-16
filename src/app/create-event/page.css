@@ -60,6 +60,10 @@
     color: var(--light-placeholder-color);   
 }
 
+.FormControlWrapper.searchForm svg{  
+    color: var(--light-placeholder-color); 
+}
+
 .FormControlWrapper input{
     padding-left: 2rem;
 }
@@ -155,3 +159,16 @@
     font-size: 15px;
     line-height: 1.5;
   }
+
+
+  @media screen and (min-width:768px){
+    .FormControlWrapper.searchForm{
+     max-width: 350px;
+     width: 100%;
+    }
+
+    .FormControlWrapper.searchForm input{
+        width: 100%;
+       }
+  }
+  
