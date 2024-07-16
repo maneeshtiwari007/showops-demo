@@ -6,8 +6,11 @@ import { Box, Flex, Grid, Heading, Section, Select, Text, TextField } from "@rad
 import * as Form from '@radix-ui/react-form';
 import { ClockIcon, GlobeIcon, Link2Icon } from "@radix-ui/react-icons";
 import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 export default function CreateEvent() {
-  const [textFieldInputState, getTextFieldInputState] = useState();
+  const [startDate, setStartDate] = useState(null);
+  const [isStartDateOpen, setIsStartDateOpen] = useState(false);
   return (
     <Box maxWidth={"570px"}>
       <Section>
@@ -31,15 +34,8 @@ export default function CreateEvent() {
             </div>
             <Grid className="form-grid-container" columns={{ md: "2", xs: "1" }} gap={"3"} rows="repeat(2, auto)" width={"auto"}>
               <Form.Field className="FormField" name="email">
-                <Form.Control asChild>
-                  <Select.Root size="3" defaultValue="apple">
-                    <Select.Trigger className="trigger-select"/>
-                    <Select.Content>
-                      <Select.Item value="apple">Apple</Select.Item>
-                      <Select.Item value="orange">Orange</Select.Item>
-                    </Select.Content>
-                  </Select.Root>
-                </Form.Control>
+                
+                <DatePicker placeholderText="Select Date..." selected={startDate} onChange={(date:any) => setStartDate(date)} />
               </Form.Field>
               <Form.Field className="FormField" name="email">
                 <Form.Control asChild>
@@ -51,8 +47,12 @@ export default function CreateEvent() {
                     </Flex>
                     </Select.Trigger>
                     <Select.Content>
-                      <Select.Item value="apple">Apple</Select.Item>
-                      <Select.Item value="orange">Orange</Select.Item>
+                      <Select.Item value="Eastern">Eastern</Select.Item>
+                      <Select.Item value="Central">Central</Select.Item>
+                      <Select.Item value="Mountain">Mountain</Select.Item>
+                      <Select.Item value="Pacific">Pacific</Select.Item>
+                      <Select.Item value="Alaskan">Alaskan</Select.Item>
+                      <Select.Item value="Hawaiian">Hawaiian</Select.Item>
                     </Select.Content>
                   </Select.Root>
                 </Form.Control>
@@ -60,16 +60,13 @@ export default function CreateEvent() {
               <Form.Field className="FormField" name="email">
                 <Form.Control asChild>
                   <Select.Root size="3" defaultValue="Apple">
-                    <Select.Trigger className="trigger-select">
+                    <Select.Trigger onChange={(date:any) => setStartDate(date)} className="trigger-select" onClick={()=>{(isStartDateOpen)?setIsStartDateOpen(false):setIsStartDateOpen(true)}}>
                     <Flex as="span" align="center" gap="2">
                       <ClockIcon/>
                       Start Time
                     </Flex>
                     </Select.Trigger>
-                    <Select.Content>
-                      <Select.Item value="apple">Apple</Select.Item>
-                      <Select.Item value="orange">Orange</Select.Item>
-                    </Select.Content>
+                    {/* <DatePicker open={isStartDateOpen} selected={startDate} onChange={(date:any) => setStartDate(date)} /> */}
                   </Select.Root>
                 </Form.Control>
               </Form.Field>

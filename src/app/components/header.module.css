@@ -4,7 +4,7 @@
   
   .HeaderInner {
     min-width: 320px;
-    position: fixed;
+    position: relative;
     height: inherit;
     top: 0;
     left: 0;
