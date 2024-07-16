@@ -45,6 +45,7 @@
   --custom-submit-button-background-color:rgba(0, 151, 0, 0.09);
   --custom-submit-button-color:rgba(0, 101, 20, 0.84);
   --light-hover-text-color: #60655F;
+  --light-placeholder-color:#050F0078;
 }
 
 .dark {
@@ -58,6 +59,7 @@
   --custom-submit-button-background-color:rgba(112, 254, 140, 0.11);
   --custom-submit-button-color:rgba(137, 255, 159, 0.8);
   --light-hover-text-color: #AFB5AD;
+  --light-placeholder-color:#EBFDE766;
 }
 
 .radix-themes {
