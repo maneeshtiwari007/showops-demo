@@ -3,10 +3,11 @@ import LayoutPropsInterface from "@/interfaces/layoutInterface";
 import styles from "./header.module.css";
 import { classNames } from "@/utils/clasNames";
 import NextLink from "next/link";
+import * as Form from '@radix-ui/react-form';
 import { Avatar, Button, Flex, IconButton, Link, Tooltip, Grid } from "@radix-ui/themes";
 import React from "react";
 import { ThemeToggle } from "./ThemeToggle";
-import { BellIcon, ChevronLeftIcon, GearIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { BellIcon, ChevronLeftIcon, GearIcon, HamburgerMenuIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { usePathname } from "next/navigation";
 export interface HeaderProps {
   data?: React.ReactNode;
@@ -21,6 +22,15 @@ export default function Header({ data, ghost }: HeaderProps) {
       <div className={classNames(styles.HeaderRoot, ghost ? styles.ghost : "")}>
         <div className={styles.HeaderInner}>
           <Grid columns={{ initial: '2', md: '1' }} style={{ justifyContent: 'space-between' }} gap="3" width="auto">
+
+            <Flex
+              display={{ initial: "flex", md: "none" }}
+              align="center">
+              <div>
+                <input type="search" className="Input" required placeholder="Search ShowOps..." />
+              </div>
+            </Flex>
+
             <Flex
               display={{ md: "none" }}
               pt={"4"}
@@ -57,14 +67,14 @@ export default function Header({ data, ghost }: HeaderProps) {
               justify="end"
               gap="4"
             >
-              <Button className="nav_bar_drawer"  variant="soft" style={{paddingLeft:10, paddingRight:10, paddingTop:8, paddingBottom:8}}>
+              <Button className="nav_bar_drawer" variant="soft" style={{ paddingLeft: 10, paddingRight: 10, paddingTop: 8, paddingBottom: 8 }}>
                 <HamburgerMenuIcon width="20" height="20" />
               </Button>
             </Flex>
 
           </Grid>
         </div>
-      </div>
+      </div >
     </>
   );
 }

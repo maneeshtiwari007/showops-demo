@@ -71,12 +71,14 @@ export default function CreateEvent() {
               <label className="FormLabel">Date & Time</label>
             </div>
             <Grid className="form-grid-container" columns={{ md: "2", xs: "1" }} gap={"3"} rows="repeat(2, auto)" width={"auto"}>
+              
               <Form.Field className="FormField" name="start_date">
-                <div className="custom-input-wrapper">
+                <div className="custom-input-wrapper custom-datepicker">
                   <CalendarIcon></CalendarIcon>
                   <DatePicker minDate={new Date()} placeholderText="Select Date..." selected={startDate} onChange={(date: any) => setStartDate(date)} />
                 </div>
               </Form.Field>
+
               <Form.Field className="FormField" name="time_zone">
                 <Form.Control required asChild>
                   <Select.Root required size="3" defaultValue={timeZone} onValueChange={(value) => { setTimeZone(value) }}>

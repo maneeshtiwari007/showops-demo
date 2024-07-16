@@ -12,6 +12,14 @@
     position: relative;
 }
 
+.FormField .custom-input-wrapper{
+    position: relative;
+}
+
+.FormField .rt-SelectTriggerInner{
+    color: var(--light-placeholder-color);
+}
+
 .FormLabel {
     font-size: var(--font-size-custom);
     font-weight: 500;
@@ -31,31 +39,47 @@
     font-size: var(--font-size-custom);
     width: 100%;
     border: 1px solid var(--custom-radius-3);
-    border-radius: var(--custom-radius-3);
-    background-color: rgba(0, 32, 0, 0.06);
+    border-radius: var(--custom-radius-3);    
+    color: var(--light-placeholder-color);
 }
+
 .FormField textarea{
     min-height: 5rem;
     padding: 0.75rem;
 }
+
 .FormControlWrapper{
     position: relative;
 }
+
 .FormControlWrapper input{
     padding-left: 2rem;
 }
-.FormControlWrapper svg{
+
+.FormField .custom-input-wrapper input{
+  padding-left: 2.5rem;
+}
+
+.FormControlWrapper svg,
+.FormField .custom-datepicker svg{
     position: absolute;
     left: 0.75rem;
     top: 50%;
     transform: translateY(-50%);
 }
+
+.FormField .custom-datepicker svg{
+    left: 1rem;
+}
+
 .form-grid-container{
     margin-bottom: 3rem;
 }
+
 .form-grid-container .FormField{
     margin-bottom: 0.5rem;
 }
+
 .trigger-select{
     width: 100%;
     border: none;
