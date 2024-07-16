@@ -76,7 +76,7 @@ export default function CreateEvent() {
             </div>
             <Grid className="form-grid-container" columns={{ md: "2", xs: "1" }} gap={"3"} rows="repeat(2, auto)" width={"auto"}>
               <Form.Field className="FormField" name="start_date">
-                <div className="custom-input-wrapper">
+                <div className="custom-input-wrapper custom-datepicker">
                   <CalendarIcon></CalendarIcon>
                   <DatePicker minDate={new Date()} placeholderText="Select Date..." selected={startDate} onChange={(date: any) => setStartDate(date)} />
                 </div>
