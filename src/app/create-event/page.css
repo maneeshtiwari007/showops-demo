@@ -9,6 +9,7 @@
 
 .FormField {
     margin-bottom: 4rem;
+    position: relative;
 }
 
 .FormLabel {
@@ -59,5 +60,23 @@
     width: 100%;
     border: none;
     background-color: rgba(0, 32, 0, 0.06);
-    box-shadow:unset
+    box-shadow:unset;
+    position: relative;
+    /* z-index: 99; */
+}
+.react-datepicker-wrapper{
+    width: 100%;
+    min-height: 40px;
+}
+.react-datepicker-popper{
+    width: 100%;
+}
+.react-datepicker{
+    width: 100%;
+}
+.react-datepicker__month-container{
+    width: 100%;
+}
+.react-datepicker__triangle{
+    display: none;
 }
