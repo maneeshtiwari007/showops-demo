@@ -2,7 +2,7 @@
 import Image from "next/image";
 import "./page.css";
 import CustomCallOut from "../components/common/CustomCallOut";
-import { Box, Flex, Grid, Heading, Section, Select, Text, TextField } from "@radix-ui/themes";
+import { Box, Flex, Grid, Heading, Section, Select, Text, TextField, Button } from "@radix-ui/themes";
 import * as Form from '@radix-ui/react-form';
 import { CalendarIcon, ClockIcon, Cross2Icon, GlobeIcon, InfoCircledIcon, Link2Icon } from "@radix-ui/react-icons";
 import React, { useEffect, useReducer, useRef } from "react";
@@ -197,17 +197,28 @@ export default function CreateEvent() {
 
           <Form.Field className="FormField" name="email">
             <div className="labelContainer">
-              <Form.Label className="FormLabel">Email</Form.Label>
+              <Form.Label className="FormLabel">Banner Image</Form.Label>
             </div>
             <Form.Control asChild>
-              <input className="Input" type="email" required />
+              <div className="custom-upload">
+                <div className="btn-upload">
+                  <label><input type="file" name="" id="banner-image" accept="image/*,.pdf" />
+                    <div><Text>Click to upload</Text> or drag and drop<br />
+                      SVG, PNG, JPG or GIF (Recommended size 1024x1024)</div>
+                  </label>
+                </div>
+              </div>
             </Form.Control>
           </Form.Field>
-          <Form.Submit className="FormSubmit" type="submit" onClick={onSubmitForm}>Create Event</Form.Submit>
-          <Form.Submit className="FormCancel" type="reset" onClick={() => { setOpenDialog(true) }}>Cancel</Form.Submit>
+
+
+          <Form.Submit className="FormSubmit btn" type="submit" onClick={onSubmitForm}>
+            Create Event
+          </Form.Submit>
+          <Form.Submit className="FormCancel btn btn-link" type="reset" onClick={() => { setOpenDialog(true) }}>Cancel</Form.Submit>
         </Form.Root>
       </Box>
-      <AlertDialog.Root open={openDialog} onOpenChange={(e)=>{setOpenDialog(e)}}>
+      <AlertDialog.Root open={openDialog} onOpenChange={(e) => { setOpenDialog(e) }}>
         <AlertDialog.Portal>
           <AlertDialog.Overlay className="AlertDialogOverlay" />
           <AlertDialog.Content className="AlertDialogContent">
@@ -215,18 +226,18 @@ export default function CreateEvent() {
             <AlertDialog.Description className="AlertDialogDescription">
               You are about to permanently delete this event. This action can't be undone
             </AlertDialog.Description>
-            <div style={{ display: 'flex', gap: 25, justifyContent: 'flex-end' }}>
+            <div style={{ display: 'flex', gap: 15, justifyContent: 'flex-end' }}>
               <AlertDialog.Cancel asChild>
-                <button className="Button mauve">Cancel</button>
+                <button className="Button mauve btn">Cancel</button>
               </AlertDialog.Cancel>
               <AlertDialog.Action asChild>
-                <button className="Button red">Yes, delete account</button>
+                <button className="Button red btn btn-danger">Delete</button>
               </AlertDialog.Action>
             </div>
           </AlertDialog.Content>
         </AlertDialog.Portal>
       </AlertDialog.Root>
-                <ToastComponent/>
+      <ToastComponent />
 
     </div>
   );

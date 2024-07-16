@@ -41,11 +41,13 @@
   --color-background: 17, 18, 16;
   --font-size-3: 14px;
   --font-size-custom: 16px;
+  --font-size-4:18px;
   --custom-radius-3: 6px;
   --custom-submit-button-background-color:rgba(0, 151, 0, 0.09);
   --custom-submit-button-color:rgba(0, 101, 20, 0.84);
   --light-hover-text-color: #60655F;
   --light-placeholder-color:#050F0078;
+  --color-danger:#E5484D;
 }
 
 .dark {
