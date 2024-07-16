@@ -45,12 +45,11 @@ export default function RootLayout({
           <Theme>
             <div>
               <div className={style.Main_Container}>
-                <Grid gap="0" columns={{ initial: '1', md: '15% 5% 80%', lg: '15% 5% 80%', sm: "0% 100%", xs: "0% 100%" }} rows="repeat(1, 1fr)" flow="row" width="100%">
+                <Grid gap="0" columns={{ initial: '1', md: '15% 85%', lg: '15% 85%', sm: "0% 100%", xs: "0% 100%" }} rows="repeat(1, 1fr)" flow="row" width="100%">
                   <Box>
                     <Sidebar></Sidebar>
                   </Box>
-                  <div></div>
-                  <div>
+                  <div className="main-content">
                     <Header></Header>
                     {children}
                   </div>

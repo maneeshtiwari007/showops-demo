@@ -19,9 +19,9 @@ const Sidebar = ({ data }: LayoutPropsInterface) => {
     console.log(themeState)
     return (
         <>
-            <div>
-                <ScrollArea type="always" scrollbars="vertical" style={{ height: '100vh', paddingLeft: '1rem', position: 'fixed',width:'250px' }}>
-                    <div style={{ paddingTop: 15, paddingBottom: 15 }}>
+            <div className='SidebarArea'>
+                <ScrollArea type="always" scrollbars="vertical">
+                    <div style={{ paddingTop: 10, paddingBottom: 15 }}>
                         <div style={{ paddingLeft: 16, paddingRight: 16, marginBottom: 10 }}>
                             <NextLink href="/" passHref legacyBehavior>
                                 <Flex align="center"><GearIcon width={26} height={26} /><span style={{ marginLeft: '0.5rem', fontSize: '26px' }}>ShowOps</span></Flex>

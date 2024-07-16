@@ -3,7 +3,7 @@ import LayoutPropsInterface from "@/interfaces/layoutInterface";
 import styles from "./header.module.css";
 import { classNames } from "@/utils/clasNames";
 import NextLink from "next/link";
-import { Avatar, Button, Flex, IconButton, Link, Tooltip } from "@radix-ui/themes";
+import { Avatar, Button, Flex, IconButton, Link, Tooltip, Grid } from "@radix-ui/themes";
 import React from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { BellIcon, GearIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
@@ -20,16 +20,16 @@ export default function Header({ data, ghost }: HeaderProps) {
     <>
       <div className={classNames(styles.HeaderRoot, ghost ? styles.ghost : "")}>
         <div className={styles.HeaderInner}>
-          <div
-            style={{
-              height: "inherit",
-              top: 0,
-              left: 0,
-              right: 0,
-              minHeight: "64px",
-            }}
-          >
-
+          <Grid columns={{ initial: '2', md: '1' }} style={{ justifyContent: 'space-between' }} gap="3" width="auto">
+            <Flex
+              display={{ md: "none" }}
+              pt={"4"}
+              pb={"4"}
+            >
+              <NextLink href="/" passHref legacyBehavior>
+                <Flex align="center"><GearIcon width={26} height={26} /><span style={{ marginLeft: '0.5rem', fontSize: '26px' }}>ShowOps</span></Flex>
+              </NextLink>
+            </Flex>
 
             <Flex
               display={{ initial: "none", md: "flex" }}
@@ -54,27 +54,15 @@ export default function Header({ data, ghost }: HeaderProps) {
             <Flex
               display={{ md: "none" }}
               align="center"
+              justify="end"
               gap="4"
-              top="0"
-              bottom="0"
-              right="0"
-              pr="4"
             >
-              <Tooltip
-                className="radix-themes-custom-fonts"
-                content="Navigation"
-              >
-                <IconButton
-                  size="3"
-                  variant="ghost"
-                  color="gray"
-                  className={styles.MobileMenuButton}
-                >
-                  <HamburgerMenuIcon width="16" height="16" />
-                </IconButton>
-              </Tooltip>
+              <Button variant="soft" style={{paddingLeft:10, paddingRight:10, paddingTop:8, paddingBottom:8}}>
+                <HamburgerMenuIcon width="20" height="20" />
+              </Button>
             </Flex>
-          </div>
+
+          </Grid>
         </div>
       </div>
     </>
