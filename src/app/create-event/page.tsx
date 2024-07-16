@@ -10,6 +10,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CustomDatePicker } from "../components/CustomDatePicker";
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import ToastComponent from "../components/common/ToasterComponent";
 
 
 export default function CreateEvent() {
@@ -225,7 +226,7 @@ export default function CreateEvent() {
           </AlertDialog.Content>
         </AlertDialog.Portal>
       </AlertDialog.Root>
-
+                <ToastComponent/>
 
     </div>
   );
