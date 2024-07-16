@@ -4,11 +4,14 @@ import "./page.css";
 import CustomCallOut from "../components/common/CustomCallOut";
 import { Box, Flex, Grid, Heading, Section, Select, Text, TextField } from "@radix-ui/themes";
 import * as Form from '@radix-ui/react-form';
-import { CalendarIcon, ClockIcon, GlobeIcon, InfoCircledIcon, Link2Icon } from "@radix-ui/react-icons";
+import { CalendarIcon, ClockIcon, Cross2Icon, GlobeIcon, InfoCircledIcon, Link2Icon } from "@radix-ui/react-icons";
 import React, { useEffect, useReducer, useRef } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CustomDatePicker } from "../components/CustomDatePicker";
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
+
+
 export default function CreateEvent() {
   const [startDate, setStartDate] = React.useState(null);
   const [endTime, setEndTime] = React.useState("End Time");
@@ -20,6 +23,7 @@ export default function CreateEvent() {
   const [isStartDateOpen, setIsStartDateOpen] = React.useState(false);
   const [errorsObj, setErrors] = React.useState(Array<{}>);
   const formRef = useRef(null);
+  const [openDialog, setOpenDialog] = React.useState(false);
   const [update, dispatch] = useReducer((state: any, action: any) => {
     return action * state;
   }, 1);
@@ -71,14 +75,12 @@ export default function CreateEvent() {
               <label className="FormLabel">Date & Time</label>
             </div>
             <Grid className="form-grid-container" columns={{ md: "2", xs: "1" }} gap={"3"} rows="repeat(2, auto)" width={"auto"}>
-              
               <Form.Field className="FormField" name="start_date">
-                <div className="custom-input-wrapper custom-datepicker">
+                <div className="custom-input-wrapper">
                   <CalendarIcon></CalendarIcon>
                   <DatePicker minDate={new Date()} placeholderText="Select Date..." selected={startDate} onChange={(date: any) => setStartDate(date)} />
                 </div>
               </Form.Field>
-
               <Form.Field className="FormField" name="time_zone">
                 <Form.Control required asChild>
                   <Select.Root required size="3" defaultValue={timeZone} onValueChange={(value) => { setTimeZone(value) }}>
@@ -201,9 +203,30 @@ export default function CreateEvent() {
             </Form.Control>
           </Form.Field>
           <Form.Submit className="FormSubmit" type="submit" onClick={onSubmitForm}>Create Event</Form.Submit>
-          <Form.Submit className="FormCancel" type="reset">Cancel</Form.Submit>
+          <Form.Submit className="FormCancel" type="reset" onClick={() => { setOpenDialog(true) }}>Cancel</Form.Submit>
         </Form.Root>
       </Box>
+      <AlertDialog.Root open={openDialog} onOpenChange={(e)=>{setOpenDialog(e)}}>
+        <AlertDialog.Portal>
+          <AlertDialog.Overlay className="AlertDialogOverlay" />
+          <AlertDialog.Content className="AlertDialogContent">
+            <AlertDialog.Title className="AlertDialogTitle">Delete Event</AlertDialog.Title>
+            <AlertDialog.Description className="AlertDialogDescription">
+              You are about to permanently delete this event. This action can't be undone
+            </AlertDialog.Description>
+            <div style={{ display: 'flex', gap: 25, justifyContent: 'flex-end' }}>
+              <AlertDialog.Cancel asChild>
+                <button className="Button mauve">Cancel</button>
+              </AlertDialog.Cancel>
+              <AlertDialog.Action asChild>
+                <button className="Button red">Yes, delete account</button>
+              </AlertDialog.Action>
+            </div>
+          </AlertDialog.Content>
+        </AlertDialog.Portal>
+      </AlertDialog.Root>
+
+
     </div>
   );
 }
