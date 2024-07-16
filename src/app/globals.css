@@ -41,7 +41,10 @@
   --color-background: 17, 18, 16;
   --font-size-3: 14px;
   --font-size-custom: 16px;
-  --custom-radius-3: 6px
+  --custom-radius-3: 6px;
+  --custom-submit-button-background-color:rgba(0, 151, 0, 0.09);
+  --custom-submit-button-color:rgba(0, 101, 20, 0.84);
+  --light-hover-text-color: #60655F;
 }
 
 .dark {
@@ -50,8 +53,11 @@
   --background-color-success: rgba(112, 254, 140, 0.11);
   --gray-12: rgba(255, 255, 255, 1);
   --success-color-link: #89FF9FCD;
-  --light-hover-background: #00200010;
+  --light-hover-background: #F4F5F312;
   --color-background: 255, 255, 255, 1;
+  --custom-submit-button-background-color:rgba(112, 254, 140, 0.11);
+  --custom-submit-button-color:rgba(137, 255, 159, 0.8);
+  --light-hover-text-color: #AFB5AD;
 }
 
 .radix-themes {
@@ -201,9 +207,9 @@ a.active {
   padding-left: 1rem;
   position: fixed !important;
   top: 0;  
-  background-color: #fff;
+  background-color: var(--color-background);
   z-index: 99;
-  width: calc(100% - 40px);
+  width: 100%;
   display: none;
 }
 
@@ -214,7 +220,6 @@ a.active {
 .main-content{
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 90px;
 }
 
 @media screen and (min-width:768px) {
@@ -227,4 +232,14 @@ a.active {
     padding-left: 90px;
     padding-top: 0px;
   }
+}
+.nav_bar_drawer{
+  background-color: var(--background-color-success);
+  color: var(--custom-success-color);
+  cursor: pointer;
+}
+.ghost_left{
+  background-color: var(--light-hover-background);
+  color: var(--light-hover-text-color);
+  cursor: pointer;
 }

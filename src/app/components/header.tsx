@@ -6,7 +6,7 @@ import NextLink from "next/link";
 import { Avatar, Button, Flex, IconButton, Link, Tooltip, Grid } from "@radix-ui/themes";
 import React from "react";
 import { ThemeToggle } from "./ThemeToggle";
-import { BellIcon, GearIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { BellIcon, ChevronLeftIcon, GearIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { usePathname } from "next/navigation";
 export interface HeaderProps {
   data?: React.ReactNode;
@@ -26,9 +26,9 @@ export default function Header({ data, ghost }: HeaderProps) {
               pt={"4"}
               pb={"4"}
             >
-              <NextLink href="/" passHref legacyBehavior>
-                <Flex align="center"><GearIcon width={26} height={26} /><span style={{ marginLeft: '0.5rem', fontSize: '26px' }}>ShowOps</span></Flex>
-              </NextLink>
+              <div>
+                <Button className="ghost_left" variant="soft" color="gray"><ChevronLeftIcon width={18} height={18} /></Button>
+              </div>
             </Flex>
 
             <Flex
@@ -57,7 +57,7 @@ export default function Header({ data, ghost }: HeaderProps) {
               justify="end"
               gap="4"
             >
-              <Button variant="soft" style={{paddingLeft:10, paddingRight:10, paddingTop:8, paddingBottom:8}}>
+              <Button className="nav_bar_drawer"  variant="soft" style={{paddingLeft:10, paddingRight:10, paddingTop:8, paddingBottom:8}}>
                 <HamburgerMenuIcon width="20" height="20" />
               </Button>
             </Flex>

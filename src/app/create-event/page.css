@@ -1,4 +1,4 @@
-.FormField[data-invalid="true"] input {
+.FormField[data-invalid="true"] input,.FormField[data-invalid="true"] textarea {
     border: 1px solid red;
     outline:none
 }
@@ -79,4 +79,8 @@
 }
 .react-datepicker__triangle{
     display: none;
+}
+.FormSubmit{
+    background-color: var(--custom-submit-button-background-color);
+    color: var(--custom-submit-button-color);
 }

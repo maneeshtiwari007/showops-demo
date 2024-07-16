@@ -2,7 +2,6 @@ import Link from "next/link";
 import styles from "../header.module.css";
 import stylesSidebar from '../sidebar.module.css';
 import { Callout } from "@radix-ui/themes";
-import { InfoCircledIcon } from "@radix-ui/react-icons";
 const CustomCallOut = ({
     children,
     icon=undefined,
